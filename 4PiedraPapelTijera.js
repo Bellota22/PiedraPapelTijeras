@@ -1,21 +1,27 @@
-var op1="Piedra";
-var op2="Papel";
-var op3="Tijera";
+var pregunta= prompt("Ingresa tu opciona: piedra, papel o tijera")
+var p=pregunta.toLocaleLowerCase();
+Options=["tijera","piedra","papel"];
+var pc=Options[Math.floor(Math.random()*3)];
 
-function operacion(){
+function operacion(p){
+ switch(true) {
+    case (p===pc):
+        console.log("Empate");
+        
+        break;
+    case(p==='tijera' && pc==='papel'  ): 
 
-if (op1 === op2){
+        console.log("Ganaste!");
+        break;
+    case( p==='piedra' && pc==='tijera'):
 
-    console.log(`Gana el ${op1}`)
+        console.log("Ganaste");
+        break;
 
-}else if(op2 ===op3){
-
-    console.log("Gana la Tijera")
-
-
-}else if(op3 === op1){
-    console.log("Gana la Piedra")
-}else{
-    console.log("Empate")
-}
-}
+    case(p==='papel' && pc==='piedra'):
+        console.log("Ganaste");
+        break;
+    default:
+        console.log("Perdiste");
+        break;
+}}
